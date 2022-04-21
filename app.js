@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
     const bar = document.querySelector("#progress-bar")
     let playing = true;
     playButton.addEventListener("click", handlerPlay)
-    let songIndex = 9;
+    let songIndex = 1;
     function handlerPlay() {
         if (playing) {
             song.play();
@@ -20,7 +20,6 @@ window.addEventListener("load", function () {
             song.pause();
             playButton.classList.remove("fa-pause");
             playButton.classList.add("fa-play");
-
             playing = true;
         }
     }
@@ -33,11 +32,17 @@ window.addEventListener("load", function () {
     function handleSong(num) {
         if (num === 1) {
             songIndex++;
+            if (songIndex === 11) {
+                songIndex = 1
+            }
             song.setAttribute("src", `./music/moonlover/Scarlet Heart Ryeo OST Part ${songIndex}.mp3`)
             playing = true
             handlerPlay()
         } else {
             songIndex--;
+            if (songIndex === 0) {
+                songIndex = 10
+            }
             song.setAttribute("src", `./music/moonlover/Scarlet Heart Ryeo OST Part ${songIndex}.mp3`)
             playing = true
             handlerPlay()
