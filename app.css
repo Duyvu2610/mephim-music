@@ -33,13 +33,20 @@ a {
 .background {
     width: 100vw;
     height: 100vh;
-    background-image: url("./image/moonlover/1661286.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     position: absolute;
     top: 0%;
     left: 0;
     z-index: -1000;
+}
+
+#myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
 }
 
 .container {
@@ -51,7 +58,7 @@ a {
 
 .feature {
     position: absolute;
-    top: calc(100% - 140px);
+    top: 50px;
     left: 50px;
     color: white;
     font-size: 20px;
