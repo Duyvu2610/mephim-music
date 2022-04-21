@@ -9,14 +9,39 @@ window.addEventListener("load", function () {
     const bar = document.querySelector("#progress-bar")
     let playing = true;
     playButton.addEventListener("click", handlerPlay)
+    let songIndex = 9;
     function handlerPlay() {
         if (playing) {
             song.play();
+            playButton.classList.remove("fa-play");
+            playButton.classList.add("fa-pause");
             playing = false;
         } else {
             song.pause();
+            playButton.classList.remove("fa-pause");
+            playButton.classList.add("fa-play");
+
             playing = true;
         }
-
     }
+    nextButton.addEventListener("click", function () {
+        handleSong(1);
+    });
+    prevButton.addEventListener("click", function () {
+        handleSong(-1);
+    });
+    function handleSong(num) {
+        if (num === 1) {
+            songIndex++;
+            song.setAttribute("src", `./music/moonlover/Scarlet Heart Ryeo OST Part ${songIndex}.mp3`)
+            playing = true
+            handlerPlay()
+        } else {
+            songIndex--;
+            song.setAttribute("src", `./music/moonlover/Scarlet Heart Ryeo OST Part ${songIndex}.mp3`)
+            playing = true
+            handlerPlay()
+        }
+    }
+
 })
