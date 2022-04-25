@@ -6,39 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./app.css">
     <title>Mê OST</title>
 </head>
 
 <body>
     <div class="opacity">
     </div>
-    <video muted loop id="myVideo">
-        <source src="./video/[달의 연인 - 보보경심 려 OST Part 1] 첸, 백현, 시우민 (EXO) - 너를 위해 MV.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
+    <video muted loop id="myVideo" src="./video/[달의 연인 - 보보경심 려 OST Part 1] 첸, 백현, 시우민 (EXO) - 너를 위해 MV.mp4">
     </video>
+    <audio id="song" src="" preload="metadata"></audio>
     <div class="container">
-        <div class="feature">
-            <div class="feature__item feature__status">Playing...</div>
+        <div class="list">
+            <div class="feature">
+                <div class="feature__item feature__status">Waiting...</div>
 
-            <div class="feature__item feature__button">
-                <i class="fa-solid fa-play"></i>
-                <i class="fa-solid fa-shuffle player-shuffle"></i>
-                <i class="fa-solid fa-backward"></i>
-                <i class="fa-solid fa-forward"></i>
-                <div>
-                    <input type="range" id="progress-bar" min="0" max="" value="0" class="bar" />
-                    <audio id="song" src="./music/moonlover/Scarlet Heart Ryeo OST Part 1.mp3"></audio>
+                <div class="feature__item feature__button">
+                    <i class="fa-solid fa-pause fa-play"></i>
+                    <i class="fa-solid fa-shuffle player-shuffle"></i>
+                    <i class="fa-solid fa-backward"></i>
+                    <i class="fa-solid fa-forward"></i>
+                    <div class="progress">
+                        <input type="range" id="progress-bar" min="0" max="100" value="0" class="bar" step="1" />
+
+                    </div>
+                    <div class="player-number">
+                        <span class="player-duration">0:00</span>
+                        <span class="player-remaining">0:00</span>
+                    </div>
                 </div>
-                <div class="player-number">
-                    <span class="player-duration">0:00</span>
-                    <span class="player-remaining">0:00</span>
-                </div>
+                <div class="feature__item feature__info">Name of music</div>
             </div>
-            <div class="feature__item feature__info">... OST Part 9 Moon Lover</div>
+            <div class="list__item">
+                <!-- <div class="item">
+                    <img src="./image/moonlover/2147794.jpg" alt="">
+                    <div class="item__info">
+                        <h3 class="songName">We are play jkashdkajsdhkjashdjasasd</h3>
+                        <h3 class="songArtist">3:54</h3>
+
+                    </div>
+                </div> -->
+            </div>
         </div>
     </div>
     <script src="./app.js"></script>
